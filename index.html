@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="order-details">
+        <h1>Order Details</h1>
+        <p><strong>Name:</strong> {{ order.name }}</p>
+        <p><strong>Items:</strong> {{ order.items | join(", ") }}</p>
+        <p><strong>Total Price:</strong> ${{ order.total_price }}</p>
+        <p><strong>Status:</strong> {{ order.status }}</p>
+        <p><strong>Instructions:</strong> {{ order.instructions }}</p>
+        
+        <div class="qr-code">
+            <h2>QR Code</h2>
+            <img src="{{ qr_code }}" alt="QR Code">
+        </div>
+        
+        <button onclick="window.location.href='/'">Go Back</button>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
